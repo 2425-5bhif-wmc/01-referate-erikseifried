@@ -1,4 +1,6 @@
-= Index page
+= OpenAPI
+Erik Seifried
+1.0.0, {docdate}
 ifndef::imagesdir[:imagesdir: images]
 
-image::img.png[]
+image::Swagger-Logo.png[]
