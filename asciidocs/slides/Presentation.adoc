@@ -1,6 +1,6 @@
 = OpenAPI
-:author: firstname lastname
-:email: x.y@htl.at
+:author: Erik Seifried
+:email: e.seifried@students.htl-leonding.ac.at
 :revnumber: 1.0
 :revdate: {docdate}
 :revremark: SLIDEDEMO @ HTL Leonding
@@ -33,5 +33,12 @@ endif::[]
 :title-slide-transition: zoom
 :title-slide-transition-speed: fast
 
-[.stretch]
-image::Swagger-Logo.png[]
+[.stretch, .text-center]
+image::Swagger-Logo.png[height=200]
+
+[.text-center]
+*Einführung in OpenAPI und Swagger*
+
+[.small.text-center]
+Erik Seifried |
+HTL Leonding
