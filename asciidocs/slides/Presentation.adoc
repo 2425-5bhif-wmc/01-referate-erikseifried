@@ -6,11 +6,6 @@
 :encoding: utf-8
 :lang: de
 :doctype: article
-:revealjs_width: 1408
-:revealjs_height: 792
-:source-highlighter: highlightjs
-:highlightjs-theme: css/monokai.css
-:iconfont-name: fonts/fontawesome/css/all
 
 = OpenAPI und Swagger
 
