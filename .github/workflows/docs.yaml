@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       INPUTPATH: asciidocs
-      SLIDES: true
+      #SLIDES: true
       BRANCH: gh-pages
     steps:
       - uses: actions/checkout@v4
@@ -29,10 +29,12 @@ jobs:
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
 
-      - name: run docker
+      - name: Convert AsciiDoc to HTML
         run: |
-          sudo ${{ env.INPUTPATH }}/scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.SLIDES }}
-          tree
+          docker run --rm \
+            -v $PWD/${{ env.INPUTPATH }}:/documents \
+            asciidoctor/docker-asciidoctor \
+            asciidoctor -b html5 -r asciidoctor-diagram -a showtitle -a toc=left *.adoc
 
 
       - name: Deploy to GitHub Pages
