@@ -7,40 +7,36 @@ on:
     paths:
       - asciidocs/**
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   build:
     name: Build & Publish 🚀
     runs-on: ubuntu-latest
     env:
-      INPUTPATH: asciidocs
-      #SLIDES: true
+      INPUTPATH: asciidocs/docs
+      OUTPUTPATH: asciidocs/html
       BRANCH: gh-pages
+
     steps:
-      - uses: actions/checkout@v4
+      # Repository auschecken
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      #- name: install packages
-      #  uses: awalsh128/cache-apt-pkgs-action@latest
-      #  with:
-      #    packages:  asciidoctor graphviz
-      #    version: 1.0
-
-      #- name: Setup tmate session
-      #  uses: mxschmitt/action-tmate@v3
-
+      # Erstelle Ausgabeverzeichnis und Konvertiere .adoc zu HTML
       - name: Convert AsciiDoc to HTML
         run: |
+          mkdir -p ${{ env.OUTPUTPATH }}
           docker run --rm \
             -v $PWD/${{ env.INPUTPATH }}:/documents \
             asciidoctor/docker-asciidoctor \
-            asciidoctor -b html5 -r asciidoctor-diagram -a showtitle -a toc=left *.adoc
+            asciidoctor -b html5 -r asciidoctor-diagram -a showtitle -a toc=left -D /documents/html /documents/*.adoc
 
-
+      # Deployment auf GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          # GITHUB_TOKEN: ${{ github.TOKEN }}
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH }}
-          folder: ${{ env.INPUTPATH }}
+          folder: ${{ env.OUTPUTPATH }}
