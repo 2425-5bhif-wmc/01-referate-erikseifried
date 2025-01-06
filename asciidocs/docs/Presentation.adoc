@@ -19,9 +19,11 @@ image::images/Swagger-Logo.png[width=450, height=450, alt="Swagger Logo"]
 Erik Seifried | HTL Leonding
 ====
 
+image::images/Referat-Ablauf.png[]
+
 == Einführung: Was ist eine API?
 === Der Vertrag zwischen zwei Systemen:
-Eine API (Application Programming Interface) ist wie ein Vertrag zwischen 2 Systemen. Sie legt fest, wie die Systeme miteinander kommunizieren und welche Informationen ausgetauscht werden.
+Eine API (Application Programming Interface) ist wie ein Vertrag zwischen 2 (oder mehreren) Systemen. Sie legt fest, wie die Systeme miteinander kommunizieren und welche Informationen ausgetauscht werden.
 
 === Restaurant Beispiel:
 image::images/Restaurant.png[]
@@ -32,20 +34,34 @@ image::images/Restaurant.png[]
 - Das bedeutet, dass die Informationen in einem festgelegten Format *JSON* oder *YAML* übermittelt werden.
 - Im Restaurant-Beispiel könnte man dies mit der Sprache vergleichen, die alle Beteiligten Sprechen
 
-
 == Was ist OpenAPI und welche Alternativen gibt es?
 image::images/OpenAPI Initiative.png[]
 === OpenAPI im Überblick:
 - OpenAPI ist ein Standard zur Beschreibung von Programmierschnittstellen
-- Es lassen sich damit REST-konforme APIs beschreiben, entwickeln, testen und dokumentieren
 
-=== REST:
-- Das zentrale Konzept einer Rest-Architektur sind Ressourcen
+== Welches Problem löst OpenAPI?
+image::images/Welches_Problem_löst_OpenAPI.png[]
 
-=== Alternativen:
+Wenn man eine REST-API hat kann niemand zu diesem Server hingehen und fragen: "Was kannst du eigentlich?".
 
-== Von der Idee zur funktionierenden API
-image::images/OpenAPI und Swagger Von der Idee zur funktionierenden API.png[width=800, height=450, alt="Von der Idee zur funktionierenden API"]
+- Welche Endpunkte gibt es?
+- Welche HTTP-Methoden (GET, POST, PUT, DELETE) kann ich nutzen?
+- Welche Datenformate (JSOn, XML) werden erwartet?
+- Welche Parameter werden benötigt (Query-Parameter, Path-Parameter, Body)?
+- Welche Antwort bekomme ich zurück?
+
+Genau dieses Problem löst OpenAPI: +
+
+image::images/2-Möglichkeiten.png[]
+
+
+
+== Schnittstllendokumentation mit der Swagger UI
+
+== Verwendung von OpenAPI in einem Quarkus-Projekt
+
+
+
 
 
 
