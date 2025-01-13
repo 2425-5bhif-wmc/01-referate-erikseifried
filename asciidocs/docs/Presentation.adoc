@@ -28,16 +28,30 @@ Eine API (Application Programming Interface) ist wie ein Vertrag zwischen 2 (ode
 === Restaurant Beispiel:
 image::images/Restaurant.png[]
 
-- Der *Client* (Gast) stellt eine Anfrage (Request), ähnlich wie ein Gast im Restaurant eine Bestellung aufgibt. Die *API*, dargestellt durch den (Kellner) nimmt die Anfrage entgegen, überprüft sie und leitet sie an den *Server* (Koch) weiter.
-- Der Server verarbeitet die Anfrage und gibt sie über die API zurück an den Client.
 - Die API sorgt dafür, dass der Austausch von Informationen standardisiert abläuft.
 - Das bedeutet, dass die Informationen in einem festgelegten Format *JSON* oder *YAML* übermittelt werden.
-- Im Restaurant-Beispiel könnte man dies mit der Sprache vergleichen, die alle Beteiligten Sprechen
+- Im Restaurant-Beispiel könnte man dies mit der Sprache vergleichen, die alle Beteiligten Sprechen (Annahme: Alle sprechen Englisch).
 
 == Was ist OpenAPI und welche Alternativen gibt es?
 image::images/OpenAPI Initiative.png[]
 === OpenAPI im Überblick:
 - OpenAPI ist ein Standard zur Beschreibung von Programmierschnittstellen
+- Soll die Fragen beantworten:
+    * Wie funktioniert eine API?
+    * Wie arbeitet eine Reihe von APIs zusammen?
+- Client Code generieren
+- Tests erstellen
+- Früher bekannt als "Swagger"
+
+image::images/Swag-Ausdruck.png[]
+
+image::images/OpenAPI-LinuxFoundation.png[]
+
+[.text-center]
+image::images/TimeLine.png[]
+
+=== Alternativen zu OpenAPI:
+image::images/Alternativen.png[]
 
 == Welches Problem löst OpenAPI?
 image::images/Welches_Problem_löst_OpenAPI.png[]
@@ -54,9 +68,18 @@ Genau dieses Problem löst OpenAPI: +
 
 image::images/2-Möglichkeiten.png[]
 
-
-
 == Schnittstllendokumentation mit der Swagger UI
+- Swagger UI ermöglicht es die API-Ressourcen zu visualisieren und mit ihnen zu interagieren.
+
+- Implementierungslogik muss nicht vorhanden sein
+- Dokumentation kann automatisch aus der OpenAPI-Spezifikation (YAML-File) generiert werden
+
+=== Wie sieht die Swagger UI aus?
+image::images/PetStore-UI-1.png[]
+
+image::images/PetStore-UI-2.png[]
+
+image::images/PetStore-UI-3.png[]
 
 == Verwendung von OpenAPI in einem Quarkus-Projekt
 
