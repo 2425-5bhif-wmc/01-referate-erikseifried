@@ -39,8 +39,6 @@ image::images/OpenAPI Initiative.png[]
 - Soll die Fragen beantworten:
     * Wie funktioniert eine API?
     * Wie arbeitet eine Reihe von APIs zusammen?
-- Client Code generieren
-- Tests erstellen
 - Früher bekannt als "Swagger"
 
 image::images/Swag-Ausdruck.png[]
@@ -50,8 +48,23 @@ image::images/OpenAPI-LinuxFoundation.png[]
 [.text-center]
 image::images/TimeLine.png[]
 
-=== Alternativen zu OpenAPI:
-image::images/Alternativen.png[]
+=== Alternativen zu OpenAPI (2 Beispiele):
+
+- GraphQL: 2015 von Facebook entwickelt (Open Source)
+
+*Hauptunterschied zwischen GraphQL und REST:*
+
+- GraphQL: Der Client bestimmt, welche Daten er benötigt → eine flexible Anfrage, eine Antwort.
+
+- REST: Der Server definiert feste Endpunkte → mehrere Anfragen nötig, um verknüpfte Daten zu erhalten.
+
+*Hauptunterschied zwischen gRPC und REST:*
+
+- gRPC: 2015 von Google entwickelt (Open Source)
+
+- Bei gRPC ruft eine Komponente (der Client) bestimmte Funktionen in einer anderen Softwarekomponente (dem Server) auf. Bei REST ruft der Client keine Funktionen auf, sondern er fordert Daten vom Server an oder aktualisiert sie.
+
+image:images/GraphQL and gRPC.png[]
 
 == Welches Problem löst OpenAPI?
 image::images/Welches_Problem_löst_OpenAPI.png[]
@@ -81,10 +94,41 @@ image::images/PetStore-UI-2.png[]
 
 image::images/PetStore-UI-3.png[]
 
-== Verwendung von OpenAPI in einem Quarkus-Projekt
+== Schnittstellendokumentation mit der Swagger UI und einer bestehenden Resource
 
+=== 1. OpenAPI-Abhängigkeit in pom.xml hinzufügen
 
+image::images/OpenAPI-pom-xml.png[]
 
+=== 2. Resource erstellen
 
+[.details]
+====
+image::images/VehicleResource.png[]
+====
 
+=== 3. Swagger UI aufrufen
+image::images/VehicleSwaggerUI.png[]
 
+== Resource Interface mit Quarkiverse Server Generator erstellen
+image:images/Quarkus-and-OpenAPI-Generator.png[]
+
+=== 1. Quarkiverse Server Generator Dependency hinzufügen
+image:images/quarkiverse-server-generator-dependency.png[]
+
+=== 2. OpenAPI Spezifikationsfile (YAML) erstellen
+image:images/Fruits-OpenAPI-File.png[]
+image:images/Intellij-API-Übersicht.png[]
+
+=== 3. Application.properties anpassen
+image:images/Application-Properties.png[]
+
+=== 4. FruitsResource Interface aus dem Quarkiverse Generator erstellen
+
+image:images/generate-interface.png[]
+
+=== 5. Target-Ordner mit generierten Klassen
+image:images/target-folder.png[]
+
+=== 6. Verwendung des FruitsResource Interface
+image:images/FruitsResource.png[]
