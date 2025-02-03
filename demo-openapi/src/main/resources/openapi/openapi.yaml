@@ -2,12 +2,19 @@ openapi: 3.0.1
 info:
   title: Fruit API
   version: 1.0.0
+  description: Eine API zur Verwaltung von Früchten
+
+servers:
+  - url: http://localhost:8080
+    description: Lokale Entwicklungsumgebung
 
 paths:
   /fruits:
     get:
       summary: "Alle Früchte abrufen"
       operationId: getAllFruits
+      tags:
+        - Fruit
       responses:
         "200":
           description: "Liste aller Früchte"
@@ -17,9 +24,12 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Fruit"
+
     post:
       summary: "Neue Frucht hinzufügen"
       operationId: addFruit
+      tags:
+        - Fruit
       requestBody:
         required: true
         content:

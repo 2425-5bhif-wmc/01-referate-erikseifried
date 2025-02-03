@@ -36,9 +36,6 @@ image::images/Restaurant.png[]
 image::images/OpenAPI Initiative.png[]
 === OpenAPI im Überblick:
 - OpenAPI ist ein Standard zur Beschreibung von Programmierschnittstellen
-- Soll die Fragen beantworten:
-    * Wie funktioniert eine API?
-    * Wie arbeitet eine Reihe von APIs zusammen?
 - Früher bekannt als "Swagger"
 
 image::images/Swag-Ausdruck.png[]
@@ -58,13 +55,13 @@ image::images/TimeLine.png[]
 
 - REST: Der Server definiert feste Endpunkte → mehrere Anfragen nötig, um verknüpfte Daten zu erhalten.
 
+image::images/REST and GraphQL.png[]
+
 *Hauptunterschied zwischen gRPC und REST:*
 
 - gRPC: 2015 von Google entwickelt (Open Source)
 
 - Bei gRPC ruft eine Komponente (der Client) bestimmte Funktionen in einer anderen Softwarekomponente (dem Server) auf. Bei REST ruft der Client keine Funktionen auf, sondern er fordert Daten vom Server an oder aktualisiert sie.
-
-image:images/GraphQL and gRPC.png[]
 
 == Welches Problem löst OpenAPI?
 image::images/Welches_Problem_löst_OpenAPI.png[]
@@ -120,8 +117,8 @@ image:images/quarkiverse-server-generator-dependency.png[]
 image:images/Fruits-OpenAPI-File.png[]
 image:images/Intellij-API-Übersicht.png[]
 
-=== 3. Application.properties anpassen
-image:images/Application-Properties.png[]
+=== 3. Plugin in pom.xml hinzufügen
+image:images/plugin.png[]
 
 === 4. FruitsResource Interface aus dem Quarkiverse Generator erstellen
 
@@ -132,3 +129,10 @@ image:images/target-folder.png[]
 
 === 6. Verwendung des FruitsResource Interface
 image:images/FruitsResource.png[]
+
+== Quellen
+https://docs.quarkiverse.io/quarkus-openapi-generator/dev/server.html
+
+video::uwQyXuZZciI[youtube, width=800, height=450]
+
+

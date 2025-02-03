@@ -554,7 +554,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Erik Seifried</span><br>
 <span id="email" class="email"><a href="mailto:e.seifried@students.htl-leonding.ac.at">e.seifried@students.htl-leonding.ac.at</a></span><br>
 <span id="revnumber">version 1.1,</span>
-<span id="revdate">2025-01-12</span>
+<span id="revdate">2025-02-03</span>
 <br><span id="revremark">OpenAPI und Swagger @ HTL Leonding</span>
 </div>
 </div>
@@ -631,25 +631,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>OpenAPI ist ein Standard zur Beschreibung von Programmierschnittstellen</p>
 </li>
 <li>
-<p>Soll die Fragen beantworten:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wie funktioniert eine API?</p>
-</li>
-<li>
-<p>Wie arbeitet eine Reihe von APIs zusammen?</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Client Code generieren</p>
-</li>
-<li>
-<p>Tests erstellen</p>
-</li>
-<li>
 <p>Früher bekannt als "Swagger"</p>
 </li>
 </ul>
@@ -668,6 +649,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/TimeLine.png" alt="TimeLine">
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alternativen_zu_openapi_2_beispiele">Alternativen zu OpenAPI (2 Beispiele):</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>GraphQL: 2015 von Facebook entwickelt (Open Source)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Hauptunterschied zwischen GraphQL und REST:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GraphQL: Der Client bestimmt, welche Daten er benötigt → eine flexible Anfrage, eine Antwort.</p>
+</li>
+<li>
+<p>REST: Der Server definiert feste Endpunkte → mehrere Anfragen nötig, um verknüpfte Daten zu erhalten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/REST%20and%20GraphQL.png" alt="REST and GraphQL">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Hauptunterschied zwischen gRPC und REST:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>gRPC: 2015 von Google entwickelt (Open Source)</p>
+</li>
+<li>
+<p>Bei gRPC ruft eine Komponente (der Client) bestimmte Funktionen in einer anderen Softwarekomponente (dem Server) auf. Bei REST ruft der Client keine Funktionen auf, sondern er fordert Daten vom Server an oder aktualisiert sie.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -715,20 +737,135 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_schnittstllendokumentation_mit_der_swagger_ui">Schnittstllendokumentation mit der Swagger UI</h2>
 <div class="sectionbody">
-
+<div class="ulist">
+<ul>
+<li>
+<p>Swagger UI ermöglicht es die API-Ressourcen zu visualisieren und mit ihnen zu interagieren.</p>
+</li>
+<li>
+<p>Implementierungslogik muss nicht vorhanden sein</p>
+</li>
+<li>
+<p>Dokumentation kann automatisch aus der OpenAPI-Spezifikation (YAML-File) generiert werden</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_wie_sieht_die_swagger_ui_aus">Wie sieht die Swagger UI aus?</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/PetStore-UI-1.png" alt="PetStore UI 1">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PetStore-UI-2.png" alt="PetStore UI 2">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PetStore-UI-3.png" alt="PetStore UI 3">
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_verwendung_von_openapi_in_einem_quarkus_projekt">Verwendung von OpenAPI in einem Quarkus-Projekt</h2>
+<h2 id="_schnittstellendokumentation_mit_der_swagger_ui_und_einer_bestehenden_resource">Schnittstellendokumentation mit der Swagger UI und einer bestehenden Resource</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="_1_openapi_abhängigkeit_in_pom_xml_hinzufügen">1. OpenAPI-Abhängigkeit in pom.xml hinzufügen</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/OpenAPI-pom-xml.png" alt="OpenAPI pom xml">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_resource_erstellen">2. Resource erstellen</h3>
+<div class="exampleblock details">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/VehicleResource.png" alt="VehicleResource">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_swagger_ui_aufrufen">3. Swagger UI aufrufen</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/VehicleSwaggerUI.png" alt="VehicleSwaggerUI">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resource_interface_mit_quarkiverse_server_generator_erstellen">Resource Interface mit Quarkiverse Server Generator erstellen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="images/Quarkus-and-OpenAPI-Generator.png" alt="Quarkus and OpenAPI Generator"></span></p>
+</div>
+<div class="sect2">
+<h3 id="_1_quarkiverse_server_generator_dependency_hinzufügen">1. Quarkiverse Server Generator Dependency hinzufügen</h3>
+<div class="paragraph">
+<p><span class="image"><img src="images/quarkiverse-server-generator-dependency.png" alt="quarkiverse server generator dependency"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_openapi_spezifikationsfile_yaml_erstellen">2. OpenAPI Spezifikationsfile (YAML) erstellen</h3>
+<div class="paragraph">
+<p><span class="image"><img src="images/Fruits-OpenAPI-File.png" alt="Fruits OpenAPI File"></span>
+<span class="image"><img src="images/Intellij-API-Übersicht.png" alt="Intellij API Übersicht"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_application_properties_anpassen">3. Application.properties anpassen</h3>
+<div class="paragraph">
+<p><span class="image"><img src="images/Application-Properties.png" alt="Application Properties"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_fruitsresource_interface_aus_dem_quarkiverse_generator_erstellen">4. FruitsResource Interface aus dem Quarkiverse Generator erstellen</h3>
+<div class="paragraph">
+<p><span class="image"><img src="images/generate-interface.png" alt="generate interface"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_target_ordner_mit_generierten_klassen">5. Target-Ordner mit generierten Klassen</h3>
+<div class="paragraph">
+<p><span class="image"><img src="images/target-folder.png" alt="target folder"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_verwendung_des_fruitsresource_interface">6. Verwendung des FruitsResource Interface</h3>
+<div class="paragraph">
+<p><span class="image"><img src="images/FruitsResource.png" alt="FruitsResource"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quellen">Quellen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://docs.quarkiverse.io/quarkus-openapi-generator/dev/server.html" class="bare">https://docs.quarkiverse.io/quarkus-openapi-generator/dev/server.html</a></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="800" height="450" src="https://www.youtube.com/embed/uwQyXuZZciI?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.1<br>
-Last updated 2025-01-12 22:47:01 +0100
+Last updated 2025-02-03 14:15:52 +0100
 </div>
 </div>
 <script>
