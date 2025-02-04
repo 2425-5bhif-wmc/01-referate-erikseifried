@@ -47,21 +47,23 @@ image::images/TimeLine.png[]
 
 === Alternativen zu OpenAPI (2 Beispiele):
 
-- GraphQL: 2015 von Facebook entwickelt (Open Source)
+- RAML (RESTful API Modeling Language): +
+  RAML wurde 2013 von MuleSoft entwickelt. +
+  YAML-basiert
+  Open Source +
+  Mulesoft: 2006 gegründet, San Francisco, Kalifornien
 
-*Hauptunterschied zwischen GraphQL und REST:*
+Beispiel:
 
-- GraphQL: Der Client bestimmt, welche Daten er benötigt → eine flexible Anfrage, eine Antwort.
+image:images/RAML.png[]
 
-- REST: Der Server definiert feste Endpunkte → mehrere Anfragen nötig, um verknüpfte Daten zu erhalten.
+- API Blueprint
+    API Blueprint wurde 2013 von Apiary entwickelt. +
+    Markdown-basiert +
+    Open Source
 
-image::images/REST and GraphQL.png[]
-
-*Hauptunterschied zwischen gRPC und REST:*
-
-- gRPC: 2015 von Google entwickelt (Open Source)
-
-- Bei gRPC ruft eine Komponente (der Client) bestimmte Funktionen in einer anderen Softwarekomponente (dem Server) auf. Bei REST ruft der Client keine Funktionen auf, sondern er fordert Daten vom Server an oder aktualisiert sie.
+Beispiel:
+image:images/API-Blueprint.png[]
 
 == Welches Problem löst OpenAPI?
 image::images/Welches_Problem_löst_OpenAPI.png[]

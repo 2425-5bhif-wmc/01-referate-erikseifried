@@ -1,4 +1,4 @@
-package at.htl.boundary;
+package at.htl.repository;
 
 import at.htl.entity.FruitEntity;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
