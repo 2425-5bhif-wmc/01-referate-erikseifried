@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: Fruit API
+  version: 1.0.0
+  description: Eine API zur Verwaltung von Früchten
+
+servers:
+  - url: http://localhost:8080
+    description: Lokale Entwicklungsumgebung
+
+paths:
+  /fruits:
+    get:
+      summary: "Alle Früchte abrufen"
+      operationId: getAllFruits
+      tags:
+        - Fruit
+      responses:
+        "200":
+          description: "Liste aller Früchte"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Fruit"
+
+    post:
+      summary: "Neue Frucht hinzufügen"
+      operationId: addFruit
+      tags:
+        - Fruit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Fruit"
+      responses:
+        "201":
+          description: "Frucht erfolgreich hinzugefügt"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Fruit"
+
+components:
+  schemas:
+    Fruit:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
